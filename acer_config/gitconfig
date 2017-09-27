@@ -1,0 +1,91 @@
+# Add immaterial change
+# This file is intended to be [include]d in the .git/config file.
+# Script devops/bin/setup-sw-workspace sets up this [include].
+
+[alias]
+    # Find the workspace absolute directory path.  This is intended for use
+    # by other aliases, but you are free to use it as well.
+    workspace-dir = "!f() { \
+         echo $(dirname \"$(git rev-parse --show-toplevel)\"); \
+       }; f"
+
+    # Find the curent repository's name.  This is intended for use
+    # by other aliases, but you are free to use it as well.
+    repo-name = "!f() { \
+         echo $(basename \"$(git rev-parse --show-toplevel)\"); \
+       }; f"
+
+    # Private alias for use in other aliases only
+    # Usage:  git push-pull-repo push|pull reponame remote branch
+    push-pull-repo = "!f() { \
+         local repodir=\"$(git workspace-dir)/$2\"; \
+         (cd $repodir; git $1 $3 $4); \
+       }; f"
+
+    pull-tools = "!f() { \
+         git push-pull-repo pull tools $1 $2; \
+       }; f"
+    pull-wcore = "!f() { \
+         git push-pull-repo pull wcore $1 $2; \
+       }; f"
+    pull-wbe = "!f() { \
+         git push-pull-repo pull wbe $1 $2; \
+       }; f"
+    pull-wfe = "!f() { \
+         git push-pull-repo pull wfe $1 $2; \
+       }; f"
+    pull-wtest = "!f() { \
+         git push-pull-repo pull wtest $1 $2; \
+       }; f"
+    pull-all = "!f() { \
+        git pull       $1 $2; \
+        git pull-tools $1 $2; \
+        git pull-wcore $1 $2; \
+      }; f"
+
+    push-tools = "!f() { \
+         git push-pull-repo push tools $1 $2; \
+       }; f"
+    push-wcore = "!f() { \
+         git push-pull-repo push wcore $1 $2; \
+       }; f"
+    push-wbe = "!f() { \
+         git push-pull-repo push wbe $1 $2; \
+       }; f"
+    push-wfe = "!f() { \
+         git push-pull-repo push wfe $1 $2; \
+       }; f"
+    push-wtest = "!f() { \
+         git push-pull-repo push wtest $1 $2; \
+       }; f"
+    push-all = "!f() { \
+        git push       $1 $2; \
+        git push-tools $1 $2; \
+        git push-wcore $1 $2; \
+      }; f"
+
+    # Private alias for use in other aliases only
+    # Usage:  git rebase-repo reponame
+    rebase-repo = "!f() { \
+         local repodir=\"$(git workspace-dir)/$1\"; \
+         (cd $repodir; git fetch origin; git rebase -p origin/master); \
+       }; f"
+
+    rebase-all = "!f() { \
+        echo '#############################'; \
+        echo \"# Rebase $(git repo-name)\"; \
+        echo '#############################'; \
+        git rebase-repo $(git repo-name); \
+        echo; \
+        echo '#############################'; \
+        echo '# Rebase tools'; \
+        echo '#############################'; \
+        git rebase-repo tools; \
+        echo; \
+        echo '#############################'; \
+        echo '# Rebase wcore'; \
+        echo '#############################'; \
+        git rebase-repo wcore; \
+      }; f"
+
+
