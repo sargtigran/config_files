@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/workspace/wave/wavecompiler/src/tio/read/read_ss'
+let g:netrw_dirhist_2='/workspace/new_trunk/veriapps/packages/boost_1_55_0/boost/multiprecision'
+let g:netrw_dirhist_3='/workspace/new_trunk/veriapps/packages/boost_1_55_0/boost/multiprecision/cpp_int'
+let g:netrw_dirhist_4='/workspace/new_trunk/veriapps/packages/boost_1_55_0/boost/multiprecision'
+let g:netrw_dirhist_5='/workspace/new_trunk/veriapps/packages/boost_1_55_0/boost'
+let g:netrw_dirhist_6='/workspace/new_trunk/veriapps/packages/boost_1_55_0/boost/multiprecision'
+let g:netrw_dirhist_7='/workspace/wave/wavecompiler/src/fgsim/fgsim_tcl'
+let g:netrw_dirhist_8='/workspace/wave/wavecompiler/tools/LangNwk'
+let g:netrw_dirhist_9='/workspace/wave/wavecompiler/tools/LangNwk/src'

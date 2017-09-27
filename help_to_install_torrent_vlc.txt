@@ -1,0 +1,5 @@
+
+http://linuxscoop.com/video/stream-torrent-video-file-using-vlc-media-player-ubuntu-desktop-derivatives
+http://www.webupd8.org/2014/03/peerflix-stream-torrents-with-vlc-or.html
+https://github.com/nodejs/node-v0.x-archive/issues/3911
+https://github.com/ForbesLindesay/spawn-sync/issues/42#issuecomment-236502384
