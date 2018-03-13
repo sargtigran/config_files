@@ -139,9 +139,9 @@ augroup filetype
 augroup END
 
 
-map f :py3f ~/wave/wfe/tools/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-imap <C-F> <c-o>:py3f ~/wave/wfe/tools/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+map f :py3f ~/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+imap <C-F> <c-o>:py3f ~/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
 
-let g:clang_format#command = '/home/tsargsyan/wave/tools/llvm/install/bin/clang-format'
-let g:clang_format#code_style = '/home/tsargsyan/.clang_format'
+let g:clang_format#command = 'llvm/install/bin/clang-format'
+let g:clang_format#code_style = '~/clang_format'
 "map f :ClangFormat <CR>

@@ -180,5 +180,5 @@ augroup filetype
   au! BufRead,BufNewFile *.wfg    set filetype=wfg
 augroup END
 
-map f :py3f /workspace/wave/wavecompiler/tools/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
-imap <C-F> <c-o>:py3f /workspace/wave/wavecompiler/tools/llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+map f :py3f llvm/tools/clang/tools/clang-format/clang-format.py<cr>
+imap <C-F> <c-o>:py3f llvm/tools/clang/tools/clang-format/clang-format.py<cr>
