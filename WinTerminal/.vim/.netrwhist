@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/tigran/work/cpp/wave/wfe/src/wllvm/passes/optimization/PatternMatcher'
+let g:netrw_dirhist_2='/home/tigran/work/cpp/wave/wfe/src/wllvm/passes/optimization'
+let g:netrw_dirhist_3='/home/tigran/work/HackerRank/Polymorphism'
